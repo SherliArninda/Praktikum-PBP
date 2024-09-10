@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Form Tambah Barang</title>
+</head>
+<body>
+    <h2>Form Tambah Data Produk</h2>
+    <div class="tambah_produk">
+        <form id="productForm">
+            <div>
+                <label class="label-main"><strong>Nama Produk</strong></label>
+                <input type="text" name="nama_produk" id="nama_produk" placeholder="masukkan nama produk.."/>
+                <div class="error" id="namaError"></div>
+            </div>
+            <div>
+                <label class="label-main"><strong>Deskripsi</strong></label>
+                <textarea name="deskripsi" id="deskripsi" placeholder="masukkan deskripsi produk.."></textarea>
+                <div class="error"  id="deskripsiError"></div>
+            </div>
+            <div>
+                <label class="label-main"><strong>Kategori</strong></label>
+                <select name="kategori" id="kategori" onchange="tampilkanSubKategori()">
+                    <option value="">--Pilih Kategori--</option>
+                    <option value="baju">Baju</option>
+                    <option value="elektronik">Elektronik</option>
+                    <option value="alat_tulis">Alat Tulis</option>
+                </select>
+                <div class="error" id="kategoriError"></div>
+            </div>
+            <div>
+                <label class="label-main"><strong>Sub Kategori</strong></label>
+                <select name="sub_kategori" id="sub_kategori">
+                    <option value="">--Pilih Sub Kategori--</option>
+                    <!-- Opsi ditulis pada bagian js -->
+                </select>
+                <div class="error" id="subKategoriError"></div>
+            </div>
+            <div>
+                <label class="label-main"><strong>Harga Satuan</strong></label>
+                <input type="number" name="harga_satuan" id="harga_satuan" placeholder="masukkan harga satuan..">
+                <div class="error" id="hargaError"></div>
+            </div>
+            <div class="grosir">
+                <label class="label-main"><strong>Grosir</strong></label>
+                <label class="option-label">
+                    <input type="radio" name="grosir" id="grosir_ya" value="ya">Ya
+                </label>
+                <label class="option-label">
+                    <input type="radio" name="grosir" id="grosir_tidak" value="tidak">Tidak
+                </label>
+                <div class="error" id="grosirError"></div>
+            </div>
+            <div>
+                <label class="label-main"><strong>Harga Grosir</strong></label>
+                <input type="number" name="hrg_grosir" id="hrg_grosir" disabled placeholder="masukkan harga grosir..">
+                <div class="error" id="hargaGrosirError"></div>
+            </div>
+            <div class="jasa-kirim">
+                <label class="label-main"><strong>Jasa Kirim</strong></label>
+                <label class="option-label">
+                    <input type="checkbox" name="jasa_jne" id="jasa_jne">JNE
+                </label>
+                <label class="option-label">
+                    <input type="checkbox" name="jasa_tiki" id="jasa_tiki">TIKI
+                </label>
+                <label class="option-label">
+                    <input type="checkbox" name="jasa_sicepat" id="jasa_sicepat">SiCepat
+                </label>
+                <label class="option-label">
+                    <input type="checkbox" name="jasa_ninja" id="jasa_ninja">Ninja Express
+                </label>
+                <label class="option-label">
+                    <input type="checkbox" name="jasa_wahana" id="jasa_wahana">Wahana
+                </label>
+                <div class="error" id="jasaError"></div>
+            </div>
+            <div>
+                <label class="label-main"><strong>Captha</strong></label>
+                <input type="text" id="captcha" value="ebgih" readonly>
+                <input type="text" name="input_captha" id="input_captha" placeholder="masukkan kode captha..">
+                <div class="error" id="capthaError"></div>
+            </div>
+            <div class="button-group">
+                <button type="button" onclick="validasiForm()">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
